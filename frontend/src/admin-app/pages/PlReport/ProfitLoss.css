@@ -1,0 +1,61 @@
+.table-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .bg-full {
+    background-color: var(--theme1-bg);
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .date-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .submit-btn {
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: darkslategray;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 10px;
+  }
+  
+  .commission-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+  
+  .commission-table th, .commission-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .commission-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+  .positive {
+    color: green;
+  }
+  

@@ -1,0 +1,1 @@
+{"version":3,"file":"BetStake.js","sourceRoot":"","sources":["../../src/models/BetStake.ts"],"names":[],"mappings":";;;AAAA,uCAAwC;AAOxC,MAAM,cAAc,GAAG,IAAI,iBAAM,CAC/B;IACE,IAAI,EAAE,MAAM;IACZ,KAAK,EAAE,MAAM;CACd,EACD;IACE,UAAU,EAAE,IAAI;CACjB,CACF,CAAA;AAED,MAAM,QAAQ,GAAG,IAAA,gBAAK,EAAwB,UAAU,EAAE,cAAc,CAAC,CAAA;AAErD,4BAAQ"}

@@ -1,0 +1,62 @@
+.table-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .date-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .date-filters label {
+    font-size: 14px;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .commission-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+  
+  .commission-table th, .commission-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .commission-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .reset-btn {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .reset-btn:hover {
+    background-color: darkred;
+  }
+
+  .bg-full {
+    background-color: var(--theme1-bg);
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .table-wrapper {
+      overflow-x: scroll;
+    }
+  }
+  

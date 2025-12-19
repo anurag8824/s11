@@ -1,0 +1,1 @@
+{"version":3,"file":"MatchGeneralSetting.js","sourceRoot":"","sources":["../../src/models/MatchGeneralSetting.ts"],"names":[],"mappings":";;;AAAA,uCAAwC;AAOxC,MAAM,yBAAyB,GAAG,IAAI,iBAAM,CAC1C;IACE,SAAS,EAAE,MAAM;CAClB,EACD;IACE,UAAU,EAAE,IAAI;CACjB,CACF,CAAA;AAED,MAAM,mBAAmB,GAAG,IAAA,gBAAK,EAC/B,qBAAqB,EACrB,yBAAyB,CAC1B,CAAA;AAE8B,kDAAmB"}

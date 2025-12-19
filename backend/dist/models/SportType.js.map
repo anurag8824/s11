@@ -1,0 +1,1 @@
+{"version":3,"file":"SportType.js","sourceRoot":"","sources":["../../src/models/SportType.ts"],"names":[],"mappings":";;;AAAA,uCAAwC;AAMxC,MAAM,eAAe,GAAG,IAAI,iBAAM,CAChC;IACE,IAAI,EAAE,MAAM;CACb,EACD;IACE,UAAU,EAAE,IAAI;CACjB,CACF,CAAA;AAED,MAAM,SAAS,GAAG,IAAA,gBAAK,EAAyB,WAAW,EAAE,eAAe,CAAC,CAAA;AAExD,8BAAS"}

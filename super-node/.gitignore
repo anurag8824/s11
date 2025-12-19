@@ -1,0 +1,24 @@
+dist/
+node_modules/
+yarn.lock
+package-lock.json
+
+
+
+
+# Ignore all environment files
+.env
+.env.development
+.env.*
+!.env.example   # Optional: If you want to keep a sample .env file, you can include it
+
+# Ignore node_modules
+node_modules/
+
+# Ignore environment files with specific extensions
+*.env
+*.env.*          # To match .env.development, .env.production, etc.
+
+# Optionally, ignore other config or temp files
+npm-debug.log*
+yarn-error.log*

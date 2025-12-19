@@ -1,0 +1,73 @@
+.ledger-container {
+    width: 95%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .ledger-title {
+    text-align: center;
+    background-color: #606060;
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+  }
+  
+  .table-section {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 5px solid #606060;
+    font-size: 18px;
+  }
+  
+  .ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .ledger-table th,
+  .ledger-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .ledger-table th {
+    background-color: #f8f8f8;
+  }
+  
+  .agent {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .final-amount {
+    color: green;
+    font-weight: bold;
+  }
+
+  .bg-final{
+    background-color: green;
+  }
+  
+  .settlement-btn {
+    background-color: rgb(230, 230, 11);
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+  }
+  
+  .settlement-btn:hover {
+    background-color: #ffcc00;
+  }
+  

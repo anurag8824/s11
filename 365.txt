@@ -1,0 +1,142 @@
+super-node .env
+
+GNU nano 7.2                          .env                                    
+PORT=3525
+SITE_URL=http://localhost:${PORT}
+SUPER_NODE_URL=http://172.236.19.246:3005
+# http://138.68.135.93:3005/
+#REDIS_URL_REPLICA=redis://localhost:6379
+REDIS_URL_REPLICA=redis://:wvGLXqhDvbPcpDv7UrnIglB@172.236.19.246:6379
+REDIS_URL_SUPER_NODE_FOR_BM="redis://localhost:6379"
+
+# redis://:wvGLXqhDvbPcpDv7UrnIglB@138.68.135.93:6379
+
+CASINO_SERVER=http://138.68.135.93:3007
+
+super-node .env.development
+
+PORT=3025
+SITE_URL=http://localhost:${PORT}
+SUPER_NODE_URL=http://172.236.19.246:3005
+REDIS_URL_REPLICA=redis://:wvGLXqhDvbPcpDv7UrnIglB@138.68.135.93:6379
+
+REDIS_URL_SUPER_NODE_FOR_BM=redis://:wvGLXqhDvbPcpDv7UrnIglB@138.68.135.93:6379
+
+CASINO_SERVER=http://138.68.135.93:3007
+
+socket .env
+SUPER_NODE_SOCKET_URL="https://socket2.newdiamond365.com/"
+CLIENT_NODE_URL="https://api.newdiamond365.com/api"
+#REDIS_URL_REPLICA=redis://localhost:6379
+# redis://:wvGLXqhDvbPcpDv7UrnIglB@138.68.135.93:6379
+REDIS_URL_REPLICA=redis://:wvGLXqhDvbPcpDv7UrnIglB@172.236.19.246:6379
+
+
+frontend .env 
+
+REACT_APP_API_KEY = 'my-secret-api-key'
+REACT_APP_API_BASEURL = 'https://api.newdiamond365.com/api/'
+REACT_APP_API_SPORTS_URL = 'https://api.driveexch.com/api/'
+REACT_APP_API_SPORTS_FANCY_URL = 'https://socket2.newdiamond365.com/api/'
+REACT_APP_API_SOCKET_URL = 'https://socket.newdiamond365.com'
+REACT_APP_IP_API_URL="https://ipapi.co/json"
+REACT_APP_USER_SOCKET="https://socket.newdiamond365.com/"
+GENERATE_SOURCEMAP=false;
+REACT_APP_CASINO_SOCKET_URL = 'https://socket2.newdiamond365.com/'
+REACT_APP_T10_STREAM = 'https://marketsarket.qnsports.live/virtualgames'
+REACT_APP_PYTHON_SERVER='https://betapi.criczap.com/api/'
+REACT_APP_SITE_URL="https://newdiamond365.com/"
+
+
+
+frontend .env.production
+
+REACT_APP_API_KEY = 'my-secret-api-key'
+REACT_APP_API_BASEURL = 'https://api.newdiamond365.com/api/'
+REACT_APP_API_SPORTS_URL = 'https://api.driveexch.com/api/'
+REACT_APP_API_SPORTS_FANCY_URL = 'https://socket2.newdiamond365.com/api/'
+REACT_APP_API_SOCKET_URL = 'https://socket.newdiamond365.com'
+REACT_APP_IP_API_URL="https://ipapi.co/json"
+REACT_APP_USER_SOCKET="https://socket.newdiamond365.com/"
+GENERATE_SOURCEMAP=false;
+REACT_APP_CASINO_SOCKET_URL = 'https://socket2.newdiamond365.com/'
+REACT_APP_T10_STREAM = 'https://marketsarket.qnsports.live/virtualgames'
+REACT_APP_PYTHON_SERVER='https://betapi.criczap.com/api/'
+REACT_APP_SITE_URL="https://newdiamond365.com/"
+
+
+
+
+backend .env
+
+# App's running environment
+NODE_ENV="development"
+
+# App's running port
+PORT="3010"
+
+# Keep logs (in days)
+# default: 10
+# Note: Keeps log-files of no. of days defined
+LOG_DAYS=10
+
+# Max request body size
+APP_MAX_UPLOAD_LIMIT="50mb"
+
+# Max Parameter Limit that are allowed in 
+# URL-encoded data
+APP_MAX_PARAMETER_LIMIT="5000"
+
+# Is CORS Enabled
+# default: true (Accepts only boolean)
+CORS_ENABLED=true
+
+# API Prefix
+API_PREFIX="api"
+
+# JSON Web Tokem Expiry time
+# Note: In minutes
+JWT_EXPIRES_IN='2h'
+
+
+# REDIS QUEUE Settings
+# Refer this link for further details: https://github.com/Automattic/kue#redis-connection-settings
+ REDIS_QUEUE_PORT=6379
+# REDIS_QUEUE_URL='127.0.0.1'
+ REDIS_QUEUE_HOST='localhost'
+# REDIS_QUEUE_DB=3
+# REDIS_QUEUE_PREFIX='q'
+
+APP_NAME="Geek Dashboard"
+APP_DESCRIPTION="A Web Server built with Express, Typescript, Mongoose, and Pug>
+APP_URL="https://newdiamond365.com"
+APP_KEYWORDS="web-server, typescript-express, typescript, express"
+COMPANY_NAME="GeekyAnts"
+SUPER_NODE_URL='https://socket2.newdiamond365.com/'
+# OD_NODE_URL='https://api.driveexch.com/'
+# USER_SOCKET_URL="'https://api.driveexch.com/"
+OD_NODE_URL="https://socket.newdiamond365.com"
+USER_SOCKET_URL="https://socket.newdiamond365.com"
+CASINO_SOCKET_URL='https://socket2.newdiamond365.com/'
+
+
+# App's secret key
+# Note: This value will be used in CSRF Token 
+# as well as in JSON Web Token (ie. JWT)
+APP_SECRET="1242#$%$^%!@@$!%*(%^metaversesolutions-metaversesolutions"
+
+11242#$%$^%!@@$!%*(%^metaversesolutions-metaversesolutions
+
+# Mongoose uri with the database name
+
+
+MONGOOSE_URL="mongodb+srv://365infayou:Jv9lwv6csl7J1Jp5@cluster365.sxln4q8.mongodb.net/infa?retryWrites=true&w=majority&appName=Cluster365"
+
+
+
+
+
+
+
+
+
