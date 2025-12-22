@@ -19,10 +19,10 @@ const GameTabMobile = (props: any) => {
             <li key={sport._id} className='nav-item'>
               <CustomLink
                 to={`/match/${sport.sportId}/${filter}`}
-                className={`nav-link ${props.sportId == sport.sportId ? 'active' : ''} ${ttpecass}`} style={{margin:"0px"}}
+                className={`nav-link ${props.sportId == sport.sportId ? 'active' : ''} ${ttpecass}`} style={{margin:"0px",paddingTop:"0px",paddingBottom:"0px"}}
               >
                 <img src={sport.icon} alt='' height='10' width='10' />
-                <p style ={{fontSize:"8px"}}>{sport.name}</p>
+                <p style ={{fontSize:"9px"}}>{sport.name}</p>
               </CustomLink>
             </li>
           )
