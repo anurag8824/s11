@@ -12,16 +12,16 @@ const GameTabMobile = (props: any) => {
   }, [location.pathname])
   return (
     <div className={'mobile-header mobile-header-2'}>
-      <ul role='tablist' className='nav nav-tabs nav-justified w-100'>
+      <ul role='tablist' className='nav nav-tabs nav-justified w-100' style={{height:"30px"}}>
         {props.sportListState.sports.map((sport: ISport) => {
           const ttpecass = sport.sportId == 7 || sport.sportId == 4339 ? 'new-launch-text' : ''
           return (
             <li key={sport._id} className='nav-item'>
               <CustomLink
                 to={`/match/${sport.sportId}/${filter}`}
-                className={`nav-link ${props.sportId == sport.sportId ? 'active' : ''} ${ttpecass}`}
+                className={`nav-link ${props.sportId == sport.sportId ? 'active' : ''} ${ttpecass}` style={{padding:"0px"}}}
               >
-                <img src={sport.icon} alt='' height='16' width='16' />
+                <img src={sport.icon} alt='' height='10' width='10' />
                 <p>{sport.name}</p>
               </CustomLink>
             </li>
