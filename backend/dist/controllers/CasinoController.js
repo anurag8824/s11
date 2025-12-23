@@ -26,6 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CasinoController = void 0;
 const ApiController_1 = require("./ApiController");
 const CasinoMatches_1 = require("../models/CasinoMatches");
+const axios_1 = __importDefault(require("axios"));
 const Bet_1 = require("../models/Bet");
 const ObjectId = require('mongoose').Types.ObjectId;
 const FancyController_1 = require("./FancyController");
@@ -40,6 +41,12 @@ setInterval(() => {
     }
     catch (e) { }
 }, 3000);
+setInterval(() => {
+    try {
+        new CasinoController().setFancyResult();
+    }
+    catch (e) { }
+}, 120000);
 class CasinoController extends ApiController_1.ApiController {
     constructor() {
         super(...arguments);
@@ -1044,6 +1051,81 @@ class CasinoController extends ApiController_1.ApiController {
                 yield CasinoGameResult_1.CasinoGameResult.updateMany({ mid: marketId, gameType: casinoType }, { $set: { 'data.status': 'done', 'data.result-over': 'done' } });
             }));
         };
+        this.setFancyResult = () => __awaiter(this, void 0, void 0, function* () {
+            var _b, _c, _d, _e;
+            const ResultCache = {};
+            try {
+                // 1. Fetch fancy list
+                const fancyResponse = yield axios_1.default.get("https://api.diamondexch11.com/api/get-business-fancy-list");
+                const fancyList = (_d = (_c = (_b = fancyResponse === null || fancyResponse === void 0 ? void 0 : fancyResponse.data) === null || _b === void 0 ? void 0 : _b.data) === null || _c === void 0 ? void 0 : _c.list) !== null && _d !== void 0 ? _d : [];
+                if (!Array.isArray(fancyList) || fancyList.length === 0) {
+                    console.warn("No fancy data received.");
+                    return;
+                }
+                // 2. Group by matchId
+                const grouped = {};
+                for (const fn of fancyList) {
+                    const matchId = String(fn.matchId);
+                    if (!matchId)
+                        continue;
+                    if (!grouped[matchId])
+                        grouped[matchId] = [];
+                    grouped[matchId].push(fn);
+                }
+                // 3. Process each matchId once
+                for (const matchId of Object.keys(grouped)) {
+                    let matchData = ResultCache[matchId];
+                    // 4. Fetch once if not cached
+                    if (!matchData) {
+                        try {
+                            const apiRes = yield axios_1.default.get(`https://fancypanel.xyz/pages/lottery/${matchId}`);
+                            matchData = (_e = apiRes === null || apiRes === void 0 ? void 0 : apiRes.data) !== null && _e !== void 0 ? _e : [];
+                            if (!Array.isArray(matchData)) {
+                                console.warn(`Invalid API response for matchId ${matchId}`);
+                                continue;
+                            }
+                            ResultCache[matchId] = matchData;
+                        }
+                        catch (err) {
+                            console.error(`Failed fetching match data for matchId ${matchId}`, err);
+                            continue;
+                        }
+                    }
+                    if (!matchData.length)
+                        continue;
+                    // 5. Process all fancy items of this matchId
+                    for (const fn of grouped[matchId]) {
+                        const selection = String(fn.selectionName).toLowerCase();
+                        const target = matchData.find((item) => {
+                            var _a;
+                            return ((_a = item.market_name) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === selection &&
+                                item.resultStatus === "RESULT_DECLARED";
+                        });
+                        if (!target)
+                            continue;
+                        // 6. Prepare payload
+                        const payload = {
+                            message: "ok",
+                            result: target === null || target === void 0 ? void 0 : target.winner_name,
+                            isRollback: false,
+                            runnerName: fn === null || fn === void 0 ? void 0 : fn.selectionName,
+                            matchId: Number(matchId),
+                        };
+                        // 7. Update fancy result
+                        try {
+                            yield axios_1.default.post("https://api.diamondexch11.com/api/update-fancy-result", payload);
+                            console.log(`Updated matchId ${matchId} | ${target.market_name}`);
+                        }
+                        catch (err) {
+                            console.error(`Failed updating fancy result for matchId ${matchId}`, err);
+                        }
+                    }
+                }
+            }
+            catch (error) {
+                console.error("Unexpected error in setFancyResult()", error);
+            }
+        });
         this.canculatePnltwo = ({ ItemBetList, selectionId, sid50, resultsids, data }) => {
             try {
                 const sids = JSON.parse(data.sids);
@@ -1105,6 +1187,7 @@ class CasinoController extends ApiController_1.ApiController {
                 case 'poker':
                 case 'poker6':
                 case 'lucky7':
+                case 'dt20':
                     let caldata = this.canculatePnltwo({ ItemBetList, selectionId, sid50, resultsids, data });
                     console.log("caldata", caldata);
                     profit_type = caldata.profit_type;
@@ -1146,7 +1229,7 @@ class CasinoController extends ApiController_1.ApiController {
                 case 'ddb':
                 case 'aaa':
                 case 'AAA':
-                case 'dt20':
+                // case 'dt20':
                 case 'dt20b':
                 case 'dtl20':
                 case 'dragontiger1Day':
@@ -1646,11 +1729,11 @@ class CasinoController extends ApiController_1.ApiController {
             }
         });
         this.htmlCards = (req, res) => __awaiter(this, void 0, void 0, function* () {
-            var _b;
+            var _f;
             const { type, roundId } = req.params;
             try {
                 let casinoType = yield CasinoGameResult_1.CasinoGameResult.findOne({ mid: roundId });
-                const html = (_b = casinoType === null || casinoType === void 0 ? void 0 : casinoType.data) === null || _b === void 0 ? void 0 : _b.html;
+                const html = (_f = casinoType === null || casinoType === void 0 ? void 0 : casinoType.data) === null || _f === void 0 ? void 0 : _f.html;
                 return this.success(res, { html });
             }
             catch (e) {

@@ -1342,6 +1342,7 @@ class BetController extends ApiController_1.ApiController {
                 const userbet = yield Bet_1.Bet.findOneAndUpdate({ _id: ObjectId(req.params.id) }, { $set: { status } });
                 const json = {};
                 let exposer = yield this.getexposerfunction({ _id: userbet.userId }, true, json);
+                let exposer2 = yield this.getcasinoexposerfunction({ _id: userbet.userId }, true, json);
                 // balance event here
                 return this.success(res, { success: true }, 'Bet deleted successfully');
             }

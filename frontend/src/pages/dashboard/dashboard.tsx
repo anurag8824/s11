@@ -8,7 +8,7 @@ import { useAppSelector } from '../../redux/hooks'
 import { selectSportList, setCurrentMatch } from '../../redux/actions/sports/sportSlice'
 import IMatch from '../../models/IMatch'
 import { useDispatch } from 'react-redux'
-import { useNavigateCustom } from '../_layout/elements/custom-link'
+import { CustomLink, useNavigateCustom } from '../_layout/elements/custom-link'
 import { useWebsocket } from '../../context/webSocket'
 import GameTab from '../_layout/elements/game-tab'
 import { isMobile } from 'react-device-detect'
@@ -260,6 +260,38 @@ const Dashboard = () => {
                   matchList={matchList}
                 />
               )}
+
+              <div className="row mx-0" style={{ marginBottom: "2px" }}>
+                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px", marginBottom: "2px" }}>
+                  <img
+                    className="img-fluid"
+                    src="https://speedcdn.io/frontend_config/diam/images/17627625602470028.gif"
+                    alt=""
+                  />
+                </CustomLink>
+                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
+                  <img
+                    className="img-fluid"
+                    src="https://speedcdn.io/frontend_config/diam/images/17627625664266101.gif"
+                    alt=""
+                  />
+                </CustomLink>
+                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
+                  <img
+                    className="img-fluid"
+                    src="https://speedcdn.io/frontend_config/diam/images/17627625734204431.gif"
+                    alt=""
+                  />
+                </CustomLink>
+                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
+                  <img
+                    className="img-fluid"
+                    src="https://speedcdn.io/frontend_config/diam/images/17650463849494368.gif"
+                    alt=""
+                  />
+                </CustomLink>
+              </div>
+
               {location.pathname.includes('in-play') || !isMobile ? (
                 <div className='home-page'>
                 <div className='casino-list mt-2' style={{marginLeft:!isMobile?"-6px":""}}>
