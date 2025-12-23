@@ -24,6 +24,9 @@ import {
 } from '../../redux/actions/casino/casinoSlice'
 import Fav from '../_layout/elements/fav'
 import axios from 'axios'
+import providersData from './providers.json';
+import { toast } from 'react-toastify'
+
 
 const Dashboard = () => {
   const [matchList, setMatchList] = React.useState<LMatch[]>([])
@@ -240,6 +243,10 @@ const Dashboard = () => {
     navigate.go(`/odds/${match.matchId}`)
   }
 
+  const showgame = () =>{
+    toast.error("This game provider is not availabe!")
+  }
+
   return (
     <>
       {' '}
@@ -262,35 +269,53 @@ const Dashboard = () => {
               )}
 
               <div className="row mx-0" style={{ marginBottom: "2px" }}>
-                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px", marginBottom: "2px" }}>
+                <a href={"#"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px", marginBottom: "2px" }}>
                   <img
                     className="img-fluid"
                     src="https://speedcdn.io/frontend_config/diam/images/17627625602470028.gif"
                     alt=""
                   />
-                </CustomLink>
-                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
+                </a>
+                <a href={`#`} onClick={() =>showgame()} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
                   <img
                     className="img-fluid"
                     src="https://speedcdn.io/frontend_config/diam/images/17627625664266101.gif"
                     alt=""
                   />
-                </CustomLink>
-                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
+                </a>
+                <a href={`#`} onClick={() =>showgame()} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
                   <img
                     className="img-fluid"
                     src="https://speedcdn.io/frontend_config/diam/images/17627625734204431.gif"
                     alt=""
                   />
-                </CustomLink>
-                <CustomLink to={"/casino-in/live-dmd"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
+                </a>
+                <a href={`#`} onClick={() =>showgame()} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px" }}>
                   <img
                     className="img-fluid"
                     src="https://speedcdn.io/frontend_config/diam/images/17650463849494368.gif"
                     alt=""
                   />
-                </CustomLink>
+                </a>
               </div>
+
+              <h2
+                className="newheading"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  marginBottom: "2px",
+                  fontSize: "16px",
+                  background: "var(--theme2-bg)",
+                  padding: "5px 10px",
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  position: "relative",
+                  color: "white",
+                }}
+              >
+                <span>My Favourites</span>
+              </h2>
 
               {location.pathname.includes('in-play') || !isMobile ? (
                 <div className='home-page'>
@@ -302,6 +327,44 @@ const Dashboard = () => {
               ) : (
                 ''
               )}
+
+<h2
+                className="newheading"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  marginBottom: "2px",
+                  fontSize: "16px",
+                  background: "var(--theme2-bg)",
+                  padding: "5px 10px",
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  position: "relative",
+                  color: "white",
+                }}
+              >
+                <span>our providers</span>
+              </h2>
+
+              <div className="row mx-0 mt-0">
+                {providersData?.map((item) => (
+                  <div
+                    key={item.id}
+                    className="col-4 col-md-3 px-1"
+                  >
+                    <div className="csn_thumb mb-2">
+                      <a href={`#`} onClick={() =>showgame()}>
+                        <img
+                          className="img-fluid w-100"
+                          src={item.image}
+                          alt={item.title}
+                        />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
             </div>
           </div>
         </div>
