@@ -268,7 +268,7 @@ const Dashboard = () => {
                 />
               )}
 
-              <div className="row mx-0" style={{ marginBottom: "2px" }}>
+              <div className="row mx-0 d-none " style={{ marginBottom: "2px" }}>
                 <a href={"#"} className={isMobile ? "col-6 position-relative " : "col-3 position-relative"} style={{ paddingLeft: "1px", paddingRight: "1px", marginBottom: "2px" }}>
                   <img
                     className="img-fluid"
@@ -299,7 +299,7 @@ const Dashboard = () => {
                 </a>
               </div>
 
-              <h2
+              {/* <h2
                 className="newheading"
                 style={{
                   display: "block",
@@ -315,7 +315,7 @@ const Dashboard = () => {
                 }}
               >
                 <span>My Favourites</span>
-              </h2>
+              </h2> */}
 
               {location.pathname.includes('in-play') || !isMobile ? (
                 <div className='home-page'>
@@ -328,7 +328,7 @@ const Dashboard = () => {
                 ''
               )}
 
-<h2
+{/* <h2
                 className="newheading"
                 style={{
                   display: "block",
@@ -344,9 +344,9 @@ const Dashboard = () => {
                 }}
               >
                 <span>our providers</span>
-              </h2>
+              </h2> */}
 
-              <div className="row mx-0 mt-0">
+              <div className="row mx-0 mt-0 d-none">
                 {providersData?.map((item) => (
                   <div
                     key={item.id}
