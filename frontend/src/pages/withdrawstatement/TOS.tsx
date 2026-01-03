@@ -8,14 +8,14 @@ const TOS = () => {
           Terms & Conditions
         </h2>
         <p className="text-muted text-center mb-5">
-          Welcome to <strong>DiamondExchange11.com</strong> — your trusted
+          Welcome to <strong>SangamExch.com</strong> — your trusted
           platform for cricket, casino, and sports betting entertainment.
         </p>
 
         <section className="mb-4">
           <h5 className="fw-semibold">1. Acceptance of Terms</h5>
           <p>
-            By accessing and using <strong>DiamondExchange11.com</strong>, you
+            By accessing and using <strong>SangamExch.com</strong>, you
             agree to comply with and be bound by these Terms & Conditions. If
             you do not agree, please do not use the website or its services.
           </p>
@@ -70,7 +70,7 @@ const TOS = () => {
         <section className="mb-4">
           <h5 className="fw-semibold">7. Fair Play Policy</h5>
           <p>
-            <strong>DiamondExchange11</strong> reserves the right to suspend or
+            <strong>SangamExch</strong> reserves the right to suspend or
             terminate any account found engaging in unfair, illegal, or
             manipulative behavior on the platform.
           </p>
@@ -80,7 +80,7 @@ const TOS = () => {
           <h5 className="fw-semibold">8. Limitation of Liability</h5>
           <p>
             We do not guarantee that our services will be uninterrupted or
-            error-free. <strong>DiamondExchange11.com</strong> is not liable for
+            error-free. <strong>SangamExch.com</strong> is not liable for
             any financial losses or damages arising from the use of our
             platform.
           </p>
@@ -100,15 +100,15 @@ const TOS = () => {
           <p>
             For any questions or concerns regarding these Terms & Conditions,
             please contact our support team at{" "}
-            <a href="mailto:support@diamondexchange11.com">
-              support@diamondexchange11.com
+            <a href="mailto:support@SangamExch.com">
+              support@SangamExch.com
             </a>
             .
           </p>
         </section>
 
         <p className="text-center mt-5 small text-secondary">
-          © {new Date().getFullYear()} DiamondExchange11.com — All Rights
+          © {new Date().getFullYear()} SangamExch.com — All Rights
           Reserved.
         </p>
       </div>

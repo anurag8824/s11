@@ -8,7 +8,7 @@ const RG = () => {
           Responsible Gaming
         </h2>
         <p className="text-muted text-center mb-5">
-          At <strong>DiamondExchange11.com</strong>, we encourage all users to
+          At <strong>SangamExch.com</strong>, we encourage all users to
           enjoy betting as a form of entertainment — not as a way to make money.
           Responsible gaming is at the heart of what we stand for.
         </p>
@@ -108,14 +108,14 @@ const RG = () => {
         <section className="mb-4">
           <h5 className="fw-semibold">7. Our Message</h5>
           <p>
-            <strong>DiamondExchange11</strong> stands for safe, transparent, and
+            <strong>SangamExch</strong> stands for safe, transparent, and
             enjoyable gaming. We remind all our users — play smart, play safe,
             and always know when to stop.
           </p>
         </section>
 
         <p className="text-center mt-5 small text-secondary">
-          © {new Date().getFullYear()} DiamondExchange11.com — Play Responsibly.
+          © {new Date().getFullYear()} SangamExch.com — Play Responsibly.
         </p>
       </div>
     </div>

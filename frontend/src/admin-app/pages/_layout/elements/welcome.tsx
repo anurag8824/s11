@@ -42,7 +42,7 @@ const Marqueemessge = (props: any) => {
         ''
       )} */}
       <div className='marqueeN' style={{ color: "#fff" }}>
-        <p>{"Welcome to DiamondExchange11"}</p>
+        <p>{"Welcome to SangamExch"}</p>
       </div>
     </div>
   )
