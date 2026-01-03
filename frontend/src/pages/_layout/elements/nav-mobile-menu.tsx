@@ -21,7 +21,7 @@ const NavMobileMenu = (props: any) => {
   return (
     <div className='header-mobile'>
       <Fav />
-      <div className=' header-b-menu'>
+      <div className=' header-b-menu d-none'>
         <a href={headerMessage?.headerMessageLink}>{headerMessage?.headerMessage}</a>
       </div>
       {isMobile && !location.pathname.includes('/odds') && !location.pathname.includes('/casino') && <ul className='list-unstyled navbarnav'>
